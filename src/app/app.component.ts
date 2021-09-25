@@ -14,11 +14,12 @@ export class AppComponent {
   canvas!: ElementRef;
   @ViewChild('downloadLink')
   downloadLink!: ElementRef;
-
+  showPlaceholder = false;
   constructor(private _imgService: HtmlToImgService) {}
 
   downloadImage() {
     this._imgService.downloadImage(this.screen, this.downloadLink, this.canvas);
+
   }
 
   

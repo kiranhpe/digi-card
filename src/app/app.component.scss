@@ -1,4 +1,5 @@
 .d-home-container {
+    position: relative;
     h2,h4 {
         padding-top: 32px;
         text-align: center;
@@ -24,5 +25,10 @@
                 text-transform: uppercase;
             }
         }
+        .palceholder {
+            position: absolute;
+            top: 0;
+        }
     }
+    
 }

@@ -21,6 +21,11 @@
 
         </div>
     </div>
+    <div class="placeholder" *ngIf="showPlaceholder">
+        <h1>digi-card</h1>
+        <h1>digi-card</h1>
+        <h1>digi-card</h1>
+    </div>
 </div>
 
 <input type='file' style="display: none;" (change)="onSelectFile($event)" #fileUpload accept="image/png, image/gif, image/jpeg">
