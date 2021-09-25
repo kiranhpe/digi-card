@@ -1,0 +1,28 @@
+.d-home-container {
+    h2,h4 {
+        padding-top: 32px;
+        text-align: center;
+    }
+    .main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .d-action {
+            margin-top: 12px;
+            button {
+                padding: 12px 12px;
+                background-color: DodgerBlue;
+                border: none;
+                color: white;
+                padding: 12px 30px;
+                cursor: pointer;
+                font-size: 20px;
+                width: 100%;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

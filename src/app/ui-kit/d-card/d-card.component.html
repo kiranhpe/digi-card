@@ -1,0 +1,26 @@
+<div class="d-card">
+    <div class="section-1">
+        <div class="d-img-container">
+            <img [src]="imgUrl" alt="" (click)="fileUpload.click()">
+            <div class="middle" (click)="fileUpload.click()">
+                <div class="upload-icon">Upload</div>
+            </div>
+        </div>
+        <div class="d-user-info-1">
+            <input class="d-user-name" [(ngModel)]="fullName" (focus)="selectAllContent($event)"/>
+            <input class="d-user-role" [(ngModel)]="role" (focus)="selectAllContent($event)"/>
+            <input class="d-user-bio" [(ngModel)]="bio" (focus)="selectAllContent($event)"/>
+        </div>
+    </div>
+    <div class="section-2">
+        <div class="d-user-info-2">
+            <input class="d-user-name" [(ngModel)]="contact" (focus)="selectAllContent($event)"/>
+            <input class="d-user-role" [(ngModel)]="email" (focus)="selectAllContent($event)"/>
+            <input class="d-user-bio" [(ngModel)]="facebook" (focus)="selectAllContent($event)"/>
+            <input class="d-user-bio" [(ngModel)]="twitter" (focus)="selectAllContent($event)"/>
+
+        </div>
+    </div>
+</div>
+
+<input type='file' style="display: none;" (change)="onSelectFile($event)" #fileUpload accept="image/png, image/gif, image/jpeg">
