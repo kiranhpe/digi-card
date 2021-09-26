@@ -1,4 +1,4 @@
-<div class="d-card" [class]="bgColor">
+<div class="d-card" [ngStyle]="{'background-color':'#'+bgColor}">
     <div class="section-1">
         <div class="d-img-container">
             <img [src]="imgUrl" alt="" (click)="fileUpload.click()">
@@ -7,22 +7,19 @@
             </div>
         </div>
         <div class="d-user-info-1">
-            <input class="d-user-name" [class]="bgColor" [(ngModel)]="fullName" (focus)="selectAllContent($event)" />
-            <input class="d-user-role" [class]="bgColor" [(ngModel)]="role" (focus)="selectAllContent($event)" />
-            <input class="d-user-bio" [class]="bgColor" [(ngModel)]="bio" (focus)="selectAllContent($event)" />
+            <input class="d-user-name" [ngStyle]="{'background-color':'#'+bgColor}" [(ngModel)]="fullName" (focus)="selectAllContent($event)" />
+            <input class="d-user-role" [ngStyle]="{'background-color':'#'+bgColor}" [(ngModel)]="role" (focus)="selectAllContent($event)" />
+            <input class="d-user-bio" [ngStyle]="{'background-color':'#'+bgColor}" [(ngModel)]="bio" (focus)="selectAllContent($event)" />
         </div>
     </div>
     <div class="section-2">
         <div class="d-user-info-2">
-            <input class="d-user-name" [class]="bgColor" [(ngModel)]="contact" (focus)="selectAllContent($event)" />
-            <input class="d-user-role" [class]="bgColor" [(ngModel)]="email" (focus)="selectAllContent($event)" />
-            <input class="d-user-bio" [class]="bgColor" [(ngModel)]="facebook" (focus)="selectAllContent($event)" />
-            <input class="d-user-bio" [class]="bgColor" [(ngModel)]="twitter" (focus)="selectAllContent($event)" />
-            <div class="d-colors">
-                <button class="red" (click)="bgColor='red'"></button>
-                <button class="blue" (click)="bgColor='blue'"></button>
-                <button class="green" (click)="bgColor='green'"></button>
-                <button class="orange" (click)="bgColor='orange'"></button>
+            <input class="d-user-name" [ngStyle]="{'background-color':'#'+bgColor}" [(ngModel)]="contact" (focus)="selectAllContent($event)" />
+            <input class="d-user-role" [ngStyle]="{'background-color':'#'+bgColor}" [(ngModel)]="email" (focus)="selectAllContent($event)" />
+            <input class="d-user-bio" [ngStyle]="{'background-color':'#'+bgColor}" [(ngModel)]="facebook" (focus)="selectAllContent($event)" />
+            <input class="d-user-bio" [ngStyle]="{'background-color':'#'+bgColor}" [(ngModel)]="twitter" (focus)="selectAllContent($event)" />
+            <div class="d-colors" *ngIf="showColorButtons" id="color-buttons">
+                <button *ngFor="let item of backgroundColorButtons" [ngStyle]="{'background-color':'#'+item}" (click)="bgColor=item"></button>
             </div>
         </div>
     </div>
