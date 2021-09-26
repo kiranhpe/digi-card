@@ -1,4 +1,4 @@
-<div class="d-card">
+<div class="d-card" [class]="bgColor">
     <div class="section-1">
         <div class="d-img-container">
             <img [src]="imgUrl" alt="" (click)="fileUpload.click()">
@@ -7,18 +7,23 @@
             </div>
         </div>
         <div class="d-user-info-1">
-            <input class="d-user-name" [(ngModel)]="fullName" (focus)="selectAllContent($event)"/>
-            <input class="d-user-role" [(ngModel)]="role" (focus)="selectAllContent($event)"/>
-            <input class="d-user-bio" [(ngModel)]="bio" (focus)="selectAllContent($event)"/>
+            <input class="d-user-name" [class]="bgColor" [(ngModel)]="fullName" (focus)="selectAllContent($event)" />
+            <input class="d-user-role" [class]="bgColor" [(ngModel)]="role" (focus)="selectAllContent($event)" />
+            <input class="d-user-bio" [class]="bgColor" [(ngModel)]="bio" (focus)="selectAllContent($event)" />
         </div>
     </div>
     <div class="section-2">
         <div class="d-user-info-2">
-            <input class="d-user-name" [(ngModel)]="contact" (focus)="selectAllContent($event)"/>
-            <input class="d-user-role" [(ngModel)]="email" (focus)="selectAllContent($event)"/>
-            <input class="d-user-bio" [(ngModel)]="facebook" (focus)="selectAllContent($event)"/>
-            <input class="d-user-bio" [(ngModel)]="twitter" (focus)="selectAllContent($event)"/>
-
+            <input class="d-user-name" [class]="bgColor" [(ngModel)]="contact" (focus)="selectAllContent($event)" />
+            <input class="d-user-role" [class]="bgColor" [(ngModel)]="email" (focus)="selectAllContent($event)" />
+            <input class="d-user-bio" [class]="bgColor" [(ngModel)]="facebook" (focus)="selectAllContent($event)" />
+            <input class="d-user-bio" [class]="bgColor" [(ngModel)]="twitter" (focus)="selectAllContent($event)" />
+            <div class="d-colors">
+                <button class="red" (click)="bgColor='red'"></button>
+                <button class="blue" (click)="bgColor='blue'"></button>
+                <button class="green" (click)="bgColor='green'"></button>
+                <button class="orange" (click)="bgColor='orange'"></button>
+            </div>
         </div>
     </div>
     <div class="placeholder" *ngIf="showPlaceholder">
@@ -28,4 +33,5 @@
     </div>
 </div>
 
-<input type='file' style="display: none;" (change)="onSelectFile($event)" #fileUpload accept="image/png, image/gif, image/jpeg">
+<input type='file' style="display: none;" (change)="onSelectFile($event)" #fileUpload
+    accept="image/png, image/gif, image/jpeg">
